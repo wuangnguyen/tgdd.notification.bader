@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        id="tgdd.notification.badge"
+        version="0.0.1">
+
+  <name>TGDDNotification</name>
+  <author>ducquang-hcmus</author>
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <js-module src="www/tgdd-notification-bage.js" name="TGDDNotification">
+    <clobbers target="tgdd.notification.bage" />
+  </js-module>
+
+  <platform name="android">
+
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="TGDDNotification">
+        <param name="android-package" value="tgdd.notification.badge.TGDDNotification"/>
+      </feature>
+    </config-file>
+    <lib-file src="libs/android/android-support-v4.jar" />
+    <config-file target="AndroidManifest.xml" parent="/manifest">
+      <!--for android-->
+      <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
+      <uses-permission android:name="com.android.launcher.permission.WRITE_SETTINGS"/>
+
+      <!--for Samsung-->
+      <uses-permission android:name="com.sec.android.provider.badge.permission.READ"/>
+      <uses-permission android:name="com.sec.android.provider.badge.permission.WRITE"/>
+
+      <!--for htc-->
+      <uses-permission android:name="com.htc.launcher.permission.READ_SETTINGS"/>
+      <uses-permission android:name="com.htc.launcher.permission.UPDATE_SHORTCUT"/>
+
+      <!--for sony-->
+      <uses-permission android:name="com.sonyericsson.home.permission.BROADCAST_BADGE"/>
+
+      <!--for apex-->
+      <uses-permission android:name="com.anddoes.launcher.permission.UPDATE_COUNT"/>
+    </config-file>
+
+    <source-file src="src/android/tgdd/notification/badge/TGDDNotification.java" target-dir="src/tgdd/notification/badge" />
+
+    <source-file src="src/android/me/leolin/shortcutbadger/ShortcutBadgeException.java" target-dir="src/me/leolin/shortcutbadger" />
+    <source-file src="src/android/me/leolin/shortcutbadger/ShortcutBadger.java" target-dir="src/me/leolin/shortcutbadger" />
+
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/AdwHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/AndroidHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/ApexHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/hTCHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/LGHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/NewHtcHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/NovaHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/SamsungHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+    <source-file src="src/android/me/leolin/shortcutbadger/impl/SonyHomeBadger.java" target-dir="src/me/leolin/shortcutbadger/impl" />
+
+    <source-file src="src/android/me/leolin/shortcutbadger/util/ImageUtil.java" target-dir="src/me/leolin/shortcutbadger/util" />
+  </platform>
+</plugin>
