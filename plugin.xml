@@ -12,7 +12,7 @@
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
-
+  <asset src="www/tgdd-notification-bage.js" target="js/tgdd-notification-bage.js" />
   <js-module src="www/tgdd-notification-bage.js" name="TGDDNotification">
     <clobbers target="tgdd.notification.bage" />
   </js-module>
