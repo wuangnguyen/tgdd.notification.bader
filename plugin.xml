@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
-        id="tgdd.notification.badge"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="tgdd.plugin.notification.badge"
         version="0.0.1">
 
   <name>TGDDNotification</name>
   <author>ducquang-hcmus</author>
+  <description>TGDD Notification Badger</description>
+  <license>MIT</license>
+  <keywords>cordova, Notification, badger</keywords>
   <engines>
     <engine name="cordova" version=">=3.4.0"/>
   </engines>
